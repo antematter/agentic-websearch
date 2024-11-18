@@ -1,0 +1,20 @@
+[project]
+name = "websearch"
+version = "0.1.0"
+description = "websearch using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.79.4,<1.0.0"
+]
+
+[project.scripts]
+websearch = "websearch.main:run"
+run_crew = "websearch.main:run"
+train = "websearch.main:train"
+replay = "websearch.main:replay"
+test = "websearch.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

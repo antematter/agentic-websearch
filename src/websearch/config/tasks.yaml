@@ -1,0 +1,28 @@
+web_searcher_task:
+  description: >
+    Search information about the query: {query}
+    The current time is {date}
+  expected_output: >
+    A list of articles about the query {query} with the title, url and snippet.
+  agent: web_searcher
+
+summarizer_task:
+  description: >
+    Review the context you got.
+    Summarize the all the articles.
+    Make sure that each summary is brief but it must contain any and all relevant information.
+    The summary should include all major aspects of the article.
+  expected_output: >
+    Fully fledged summaries of the articles.
+    Summary of each article should be no more than 2 paragraphs. The summary can also be a list of items depending on the context.
+  agent: summarizer
+
+answer_gen_task:
+  description: >
+    Analyze the query {query} and understand what it wants.
+    Analyze the summaries of the articles as well.
+    Answer the query from the summaries. 
+    Only give relevant answer.
+  expected_output: >
+    The answer must be within 1-2 lines or it can even be presented as a list depending on the query type.
+  agent: answer_gen
